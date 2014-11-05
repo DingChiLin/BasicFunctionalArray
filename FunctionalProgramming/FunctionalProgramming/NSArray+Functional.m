@@ -10,16 +10,20 @@
 
 @implementation NSArray(Functional)
 
-- (NSArray *)mapObjectsUsingBlock:(id (^)(id obj, NSUInteger idx))block {
+- (NSArray *)mapObjectsUsingBlock:(MapBlock)block {
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self count]];
+    
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        
         [result addObject:block(obj, idx)];
+        
     }];
     return result;
 }
 
 
-- (NSArray *)filterObjectsUsingBlock:(BOOL (^)(id obj, NSUInteger idx))block {
+- (NSArray *)filterObjectsUsingBlock:(FilterBlock)block {
+    
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self count]];
     
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -30,18 +34,27 @@
     return result;
 }
 
-- (id)reduceObjectsUsingBlock:(id (^)(id previousObj, id currentObj))block{
-
+- (id)reduceObjectsUsingBlock:(ReduceBlock)block{
+    
     __block id result = nil;
     
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         result = block(result,obj);
-        
     }];
     
     return result;
     
 }
 
+const ClassFilter classFilter = ^FilterBlock(Class checkClass){
+    return ^BOOL(id obj, NSUInteger idx){
+        return obj != nil && [obj isKindOfClass:checkClass];
+    };
+};
 
 @end
+
+
+
+
+

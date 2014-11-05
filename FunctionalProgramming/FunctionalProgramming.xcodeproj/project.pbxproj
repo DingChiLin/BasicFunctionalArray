@@ -15,6 +15,7 @@
 		010DB4E01A072DBC00AB561B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010DB4DE1A072DBC00AB561B /* LaunchScreen.xib */; };
 		010DB4EC1A072DBC00AB561B /* FunctionalProgrammingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB4EB1A072DBC00AB561B /* FunctionalProgrammingTests.m */; };
 		010DB4F71A078B1500AB561B /* NSArray+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB4F61A078B1500AB561B /* NSArray+Functional.m */; };
+		010DB5041A0A297600AB561B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB5031A0A297600AB561B /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		010DB4EB1A072DBC00AB561B /* FunctionalProgrammingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FunctionalProgrammingTests.m; sourceTree = "<group>"; };
 		010DB4F51A078B1500AB561B /* NSArray+Functional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Functional.h"; sourceTree = "<group>"; };
 		010DB4F61A078B1500AB561B /* NSArray+Functional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Functional.m"; sourceTree = "<group>"; };
+		010DB5021A0A297600AB561B /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		010DB5031A0A297600AB561B /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				010DB4D41A072DBC00AB561B /* AppDelegate.m */,
 				010DB4D61A072DBC00AB561B /* ViewController.h */,
 				010DB4D71A072DBC00AB561B /* ViewController.m */,
+				010DB5021A0A297600AB561B /* User.h */,
+				010DB5031A0A297600AB561B /* User.m */,
 				010DB4F51A078B1500AB561B /* NSArray+Functional.h */,
 				010DB4F61A078B1500AB561B /* NSArray+Functional.m */,
 				010DB4D91A072DBC00AB561B /* Main.storyboard */,
@@ -224,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				010DB5041A0A297600AB561B /* User.m in Sources */,
 				010DB4D81A072DBC00AB561B /* ViewController.m in Sources */,
 				010DB4F71A078B1500AB561B /* NSArray+Functional.m in Sources */,
 				010DB4D51A072DBC00AB561B /* AppDelegate.m in Sources */,
@@ -420,6 +426,7 @@
 				010DB4F11A072DBC00AB561B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		010DB4F21A072DBC00AB561B /* Build configuration list for PBXNativeTarget "FunctionalProgrammingTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +435,7 @@
 				010DB4F41A072DBC00AB561B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

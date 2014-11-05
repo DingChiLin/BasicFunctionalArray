@@ -1,4 +1,4 @@
-//
+
 //  NSArray+Functional.h
 //  FunctionalProgramming
 //
@@ -10,10 +10,19 @@
 
 @interface NSArray(Functional)
 
-- (NSArray *)mapObjectsUsingBlock:(id (^)(id obj, NSUInteger idx))block;
+typedef id (^MapBlock)(id obj, NSUInteger idx);
+typedef BOOL (^FilterBlock)(id obj, NSUInteger idx);
+typedef id (^ReduceBlock)(id result, id obj);
+typedef FilterBlock(^ClassFilter)(Class checkClass);
 
-- (NSArray *)filterObjectsUsingBlock:(BOOL (^)(id obj, NSUInteger idx))block;
+- (NSArray *)mapObjectsUsingBlock:(MapBlock)block;
 
-- (id)reduceObjectsUsingBlock:(id (^)(id previousObj, id currentObj))block;
+- (NSArray *)filterObjectsUsingBlock:(FilterBlock)block;
+
+- (id)reduceObjectsUsingBlock:(ReduceBlock)block;
+
+extern const ClassFilter classFilter;
 
 @end
+
+
